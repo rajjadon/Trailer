@@ -56,4 +56,8 @@ dependencies {
     implementation project( ':data')
     implementation project( ':domain')
     implementation project( ':presentation')
+
+    //Android Data Store
+    implementation "androidx.datastore:datastore:$project.data_store"
+    implementation "androidx.datastore:datastore-preferences:$project.data_store"
 }
