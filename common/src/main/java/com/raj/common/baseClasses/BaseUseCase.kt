@@ -65,7 +65,7 @@ abstract class BaseUseCase<in Params, out ApiResponse> where ApiResponse : Any {
 
                         else -> {
                             errorChannel.send(
-                                HttpRequestError.SomeThingWentWrong()
+                                HttpRequestError.SomeThingWentWrong(500)
                             )
                         }
                     }

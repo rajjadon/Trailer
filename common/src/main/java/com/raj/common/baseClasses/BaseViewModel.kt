@@ -12,8 +12,7 @@ import kotlinx.coroutines.flow.onEach
 import kotlinx.coroutines.launch
 import javax.inject.Inject
 
-@HiltViewModel
-open class BaseViewModel @Inject constructor() : ViewModel() {
+abstract class BaseViewModel : ViewModel() {
 
     private var _networkError= MutableSharedFlow<NetworkError>()
     val networkError = _networkError.toSharedFlow()
@@ -37,5 +36,5 @@ open class BaseViewModel @Inject constructor() : ViewModel() {
         }
     }
 
-    open fun cancelApiJob() {}
+    abstract fun cancelApiJob()
 }
