@@ -10,10 +10,10 @@ import javax.inject.Singleton
 
 @Module
 @InstallIn(SingletonComponent::class)
-object ApiServiceProvider {
+object RemoteDataSourceProvider {
 
     @Provides
     @Singleton
-    fun providesNetworkService(retrofit: Retrofit.Builder): NetworkService =
+    fun provideRemoteDataSource(retrofit: Retrofit.Builder): NetworkService =
         retrofit.build().create(NetworkService::class.java)
 }
