@@ -21,7 +21,7 @@ class MainActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
         setContent {
             TrailerTheme {
-                MainScreen()
+                MainActivityScreen()
             }
         }
     }
@@ -29,7 +29,7 @@ class MainActivity : ComponentActivity() {
 
 @Preview
 @Composable
-private fun MainScreen() {
+private fun MainActivityScreen() {
     val navController = rememberNavController()
 
     val bottomNavigationItems = listOf(
