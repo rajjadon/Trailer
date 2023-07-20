@@ -67,4 +67,7 @@ dependencies {
     // Jetpack Navigation
     def nav_version = "2.6.0"
     api "androidx.navigation:navigation-compose:$nav_version"
+
+    // GLide
+    implementation "com.github.bumptech.glide:compose:1.0.0-alpha.1"
 }
