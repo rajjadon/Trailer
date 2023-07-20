@@ -78,9 +78,4 @@ dependencies {
     //Android Data Store
     implementation "androidx.datastore:datastore:$project.data_store"
     implementation "androidx.datastore:datastore-preferences:$project.data_store"
-
-    // Lifecycle
-    implementation "androidx.lifecycle:lifecycle-viewmodel-compose:$lifecycle"
-    implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:$lifecycle"
-    implementation "androidx.lifecycle:lifecycle-runtime-compose:$lifecycle"
 }

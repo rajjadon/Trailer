@@ -2,9 +2,9 @@ package com.raj.datasource.remote
 
 import com.google.gson.Gson
 import com.raj.datasource.remote.baseResponse.ErrorResponse
-import com.raj.datasource.remote.error.HttpRequestError
-import com.raj.datasource.remote.error.HttpRequestErrorCodes
-import com.raj.datasource.remote.error.NetworkError
+import com.raj.common.error.HttpRequestError
+import com.raj.common.error.HttpRequestErrorCodes
+import com.raj.common.error.NetworkError
 import org.json.JSONObject
 import retrofit2.Response
 

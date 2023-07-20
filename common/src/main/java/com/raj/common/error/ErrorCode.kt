@@ -1,4 +1,4 @@
-package com.raj.datasource.remote.error
+package com.raj.common.error
 
 enum class HttpRequestErrorCodes(val code: Int) {
 

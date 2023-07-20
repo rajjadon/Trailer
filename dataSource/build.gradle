@@ -42,7 +42,6 @@ dependencies {
 
     // Retrofit
     api "com.squareup.retrofit2:retrofit:$project.retrofit"
-    api "com.squareup.retrofit2:converter-gson:$project.retrofit"
     api "com.squareup.okhttp3:logging-interceptor:$project.okhttp_version"
 
     api "com.squareup.okhttp3:okhttp:5.0.0-alpha.11"
