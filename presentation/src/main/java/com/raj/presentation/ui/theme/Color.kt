@@ -1,4 +1,4 @@
-package com.raj.trailer.ui.theme
+package com.raj.presentation.ui.theme
 
 import androidx.compose.ui.graphics.Color
 

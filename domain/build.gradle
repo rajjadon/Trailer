@@ -5,11 +5,13 @@ plugins {
 
 android {
     namespace 'com.raj.domain'
-    compileSdk 33
+    compileSdk appCompileSdkVersion
 
     defaultConfig {
-        minSdk 24
-        targetSdk 33
+        minSdk appMinSdkVersion
+        targetSdk appTargetSdkVersion
+        versionCode appVersionCode
+        versionName appVersionName
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         consumerProguardFiles "consumer-rules.pro"

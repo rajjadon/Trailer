@@ -1,4 +1,4 @@
-package com.raj.trailer.ui.component
+package com.raj.presentation.ui.component
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background

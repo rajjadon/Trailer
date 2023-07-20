@@ -10,12 +10,12 @@ import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
-import com.raj.trailer.favorite.FavoriteScreen
-import com.raj.trailer.home.HomeScreen
+import com.raj.presentation.favorite.FavoriteScreen
+import com.raj.presentation.home.HomeScreen
 import com.raj.trailer.navigation.AppBottomNavigation
 import com.raj.trailer.navigation.BottomNavigationScreens
 import com.raj.trailer.navigation.bottomNavigationItems
-import com.raj.trailer.ui.theme.TrailerTheme
+import com.raj.presentation.ui.theme.TrailerTheme
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {

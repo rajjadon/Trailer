@@ -1,4 +1,4 @@
-package com.raj.trailer.ui.theme
+package com.raj.presentation.ui.theme
 
 import android.app.Activity
 import android.os.Build
