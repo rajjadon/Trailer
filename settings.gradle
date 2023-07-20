@@ -14,3 +14,7 @@ dependencyResolutionManagement {
 }
 rootProject.name = "Trailer"
 include ':Trailer'
+include ':data'
+include ':domain'
+include ':presentation'
+include ':dataSource'
