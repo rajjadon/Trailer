@@ -1,8 +1,6 @@
 plugins {
     id 'com.android.application'
     id 'org.jetbrains.kotlin.android'
-    id 'kotlin-kapt'
-    id 'dagger.hilt.android.plugin'
 }
 
 def localProperties = new Properties()
@@ -59,8 +57,4 @@ dependencies {
     implementation project( ':domain')
     implementation project( ':presentation')
     implementation project(':common')
-
-    // Hilt dependencies
-    api "com.google.dagger:hilt-android:$project.hilt_version"
-    kapt "com.google.dagger:hilt-android-compiler:$project.hilt_version"
 }
