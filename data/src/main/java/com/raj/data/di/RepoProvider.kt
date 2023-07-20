@@ -1,4 +1,4 @@
-package com.raj.trailer.di
+package com.raj.data.di
 
 import com.raj.data.RemoteRepoImpl
 import com.raj.domain.repo.RemoteRepo
