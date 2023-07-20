@@ -3,41 +3,52 @@ package com.raj.trailer
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
-import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.material3.MaterialTheme
-import androidx.compose.material3.Surface
-import androidx.compose.ui.Modifier
+import androidx.compose.material.Scaffold
+import androidx.compose.runtime.Composable
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
-import com.raj.trailer.base.HOME_SCREEN
 import com.raj.trailer.home.HomeScreen
+import com.raj.trailer.navigation.AppBottomNavigation
+import com.raj.trailer.navigation.BottomNavigationScreens
 import com.raj.trailer.ui.theme.TrailerTheme
 
 class MainActivity : ComponentActivity() {
-
-    private lateinit var navHostController: NavHostController
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
             TrailerTheme {
-                // A surface container using the 'background' color from the theme
-                Surface(
-                    modifier = Modifier.fillMaxSize(), color = MaterialTheme.colorScheme.background
-                ) {
-                    navHostController = rememberNavController()
+                val navController = rememberNavController()
 
-                    NavHost(navController = navHostController, startDestination = HOME_SCREEN) {
-                        composable(HOME_SCREEN) {
-                            HomeScreen()
-                        }
-//                        composable(FAVORITE_SCREEN) {
-//                            AddProjectScreen()
-//                        }
-                    }
+                val bottomNavigationItems = listOf(
+                    BottomNavigationScreens.HomeScreen,
+                    BottomNavigationScreens.FavoriteScreen
+                )
+
+                Scaffold(
+                    bottomBar = {
+                        AppBottomNavigation(navController, bottomNavigationItems)
+                    },
+                ) {
+                    it.calculateBottomPadding()
+                    MainScreenNavigationConfigurations(navController)
                 }
             }
+        }
+    }
+}
+
+@Composable
+private fun MainScreenNavigationConfigurations(
+    navController: NavHostController
+) {
+    NavHost(navController, startDestination = BottomNavigationScreens.HomeScreen.route) {
+        composable(BottomNavigationScreens.HomeScreen.route) {
+            HomeScreen()
+        }
+        composable(BottomNavigationScreens.FavoriteScreen.route) {
+            HomeScreen()
         }
     }
 }

@@ -12,6 +12,7 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.painter.ColorPainter
 import androidx.compose.ui.text.TextStyle
@@ -33,21 +34,26 @@ fun HomeScreenItem() {
         Image(
             painter = ColorPainter(Color.White),
             contentDescription = "movie image",
-            modifier = Modifier.height(160.dp)
+            modifier = Modifier
+                .height(160.dp)
+                .clip(shape = RoundedCornerShape(topStart = 10.dp, topEnd = 10.dp))
         )
         Text(
             text = "Title",
             modifier = Modifier
                 .fillMaxWidth()
                 .padding(
-                    top = 20.dp
+                    top = 16.dp, start = 10.dp
                 ),
             style = TextStyle(color = Color.White, fontSize = 16.sp, fontWeight = FontWeight.Bold)
         )
         Text(
             text = "Description",
             modifier = Modifier
-                .fillMaxWidth(),
+                .fillMaxWidth()
+                .padding(
+                    start = 10.dp, bottom = 16.dp
+                ),
             style = TextStyle(color = Color.White, fontSize = 16.sp, fontWeight = FontWeight.Normal)
         )
     }
