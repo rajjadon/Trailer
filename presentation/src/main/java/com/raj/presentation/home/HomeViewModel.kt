@@ -1,30 +1,28 @@
 package com.raj.presentation.home
 
+import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.raj.common.baseClasses.BaseViewModel
-import com.raj.common.extension.invokeOnViewModelScope
+import com.raj.common.baseClasses.DataState
+import com.raj.common.extension.invokeOnIO
 import com.raj.domain.useCase.GetMovieListUseCase
 import dagger.hilt.android.lifecycle.HiltViewModel
-import kotlinx.coroutines.flow.launchIn
-import kotlinx.coroutines.flow.onEach
+import kotlinx.coroutines.flow.MutableSharedFlow
 import javax.inject.Inject
 
 @HiltViewModel
-class HomeViewModel @Inject constructor(private val getMovieListUseCase: GetMovieListUseCase) : BaseViewModel(){
+class HomeViewModel @Inject constructor(private val getMovieListUseCase: GetMovieListUseCase) :
+    ViewModel() {
 
-    fun getMovieList(){
-        getMovieListUseCase.invokeOnViewModelScope(
+    private val _movieList = MutableSharedFlow<DataState<Unit>>()
+    val movieList = MutableSharedFlow<DataState<Unit>>()
+
+    fun getMovieList() {
+        getMovieListUseCase.invokeOnIO(
             params = Unit,
             scope = viewModelScope,
             onResult = {
-                it.onEach {
-
-                }.launchIn(viewModelScope)
+                _movieList.emit(it)
             }
         )
-    }
-
-    override fun cancelApiJob() {
-        TODO("Not yet implemented")
     }
 }
