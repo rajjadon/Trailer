@@ -7,7 +7,7 @@ import com.google.gson.annotations.SerializedName
 data class ErrorResponse(
 
     @SerializedName("code")
-    var code: Int,
+    var code: Int?,
 
     @SerializedName("is_error")
     var isError: Boolean,
