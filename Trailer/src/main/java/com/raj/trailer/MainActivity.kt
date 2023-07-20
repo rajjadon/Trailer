@@ -5,10 +5,12 @@ import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.compose.material.Scaffold
 import androidx.compose.runtime.Composable
+import androidx.compose.ui.tooling.preview.Preview
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
+import com.raj.trailer.favorite.FavoriteScreen
 import com.raj.trailer.home.HomeScreen
 import com.raj.trailer.navigation.AppBottomNavigation
 import com.raj.trailer.navigation.BottomNavigationScreens
@@ -19,23 +21,29 @@ class MainActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
         setContent {
             TrailerTheme {
-                val navController = rememberNavController()
-
-                val bottomNavigationItems = listOf(
-                    BottomNavigationScreens.HomeScreen,
-                    BottomNavigationScreens.FavoriteScreen
-                )
-
-                Scaffold(
-                    bottomBar = {
-                        AppBottomNavigation(navController, bottomNavigationItems)
-                    },
-                ) {
-                    it.calculateBottomPadding()
-                    MainScreenNavigationConfigurations(navController)
-                }
+                MainScreen()
             }
         }
+    }
+}
+
+@Preview
+@Composable
+private fun MainScreen() {
+    val navController = rememberNavController()
+
+    val bottomNavigationItems = listOf(
+        BottomNavigationScreens.HomeScreen,
+        BottomNavigationScreens.FavoriteScreen
+    )
+
+    Scaffold(
+        bottomBar = {
+            AppBottomNavigation(navController, bottomNavigationItems)
+        },
+    ) {
+        it.calculateBottomPadding()
+        MainScreenNavigationConfigurations(navController)
     }
 }
 
@@ -48,7 +56,7 @@ private fun MainScreenNavigationConfigurations(
             HomeScreen()
         }
         composable(BottomNavigationScreens.FavoriteScreen.route) {
-            HomeScreen()
+            FavoriteScreen()
         }
     }
 }
