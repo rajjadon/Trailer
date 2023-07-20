@@ -1,11 +1,13 @@
 package com.raj.trailer.ui.component
 
 import androidx.compose.foundation.Image
+import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
@@ -24,10 +26,12 @@ fun HomeScreenItem() {
     Column(
         horizontalAlignment = Alignment.End,
         verticalArrangement = Arrangement.Center,
-        modifier = Modifier.padding(5.dp)
+        modifier = Modifier
+            .padding(5.dp)
+            .background(color = Color.Gray, shape = RoundedCornerShape(10.dp))
     ) {
         Image(
-            painter = ColorPainter(Color.Red),
+            painter = ColorPainter(Color.White),
             contentDescription = "movie image",
             modifier = Modifier.height(160.dp)
         )
