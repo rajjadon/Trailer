@@ -14,6 +14,7 @@ import com.raj.trailer.favorite.FavoriteScreen
 import com.raj.trailer.home.HomeScreen
 import com.raj.trailer.navigation.AppBottomNavigation
 import com.raj.trailer.navigation.BottomNavigationScreens
+import com.raj.trailer.navigation.bottomNavigationItems
 import com.raj.trailer.ui.theme.TrailerTheme
 
 class MainActivity : ComponentActivity() {
@@ -31,11 +32,6 @@ class MainActivity : ComponentActivity() {
 @Composable
 private fun MainActivityScreen() {
     val navController = rememberNavController()
-
-    val bottomNavigationItems = listOf(
-        BottomNavigationScreens.HomeScreen,
-        BottomNavigationScreens.FavoriteScreen
-    )
 
     Scaffold(
         bottomBar = {
