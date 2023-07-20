@@ -16,7 +16,9 @@ import com.raj.trailer.navigation.AppBottomNavigation
 import com.raj.trailer.navigation.BottomNavigationScreens
 import com.raj.trailer.navigation.bottomNavigationItems
 import com.raj.presentation.ui.theme.TrailerTheme
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
