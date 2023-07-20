@@ -15,8 +15,8 @@ import javax.inject.Inject
 @HiltViewModel
 open class BaseViewModel @Inject constructor() : ViewModel() {
 
-    private var _jioMartPartnerError = MutableSharedFlow<NetworkError>()
-    val jioMartPartnerError = _jioMartPartnerError.toSharedFlow()
+    private var _networkError= MutableSharedFlow<NetworkError>()
+    val networkError = _networkError.toSharedFlow()
 
     private var _loading = MutableSharedFlow<Boolean>()
     val loading = _loading.toSharedFlow()
@@ -24,7 +24,7 @@ open class BaseViewModel @Inject constructor() : ViewModel() {
     fun sendError(error: Flow<NetworkError>) {
         viewModelScope.launch {
             error.onEach {
-                _jioMartPartnerError.emit(it)
+                _networkError.emit(it)
             }.launchIn(this)
         }
     }
