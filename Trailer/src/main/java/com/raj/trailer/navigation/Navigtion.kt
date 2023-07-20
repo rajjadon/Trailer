@@ -53,7 +53,7 @@ fun AppBottomNavigation(
                 },
                 selectedContentColor = Color.Black,
                 unselectedContentColor = Color.Black.copy(0.4f),
-                alwaysShowLabel = true,
+                alwaysShowLabel = false,
                 selected = currentRoute == item.route,
                 onClick = {
                     navController.navigate(item.route) {
