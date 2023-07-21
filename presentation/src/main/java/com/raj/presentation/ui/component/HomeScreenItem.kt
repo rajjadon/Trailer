@@ -31,6 +31,13 @@ fun HomeScreenItem() {
             .padding(5.dp)
             .background(color = Color.Gray, shape = RoundedCornerShape(10.dp))
     ) {
+
+        /*GlideImage(
+            model = "", contentDescription = "movie banner", modifier = Modifier
+                .height(160.dp)
+                .clip(shape = RoundedCornerShape(topStart = 10.dp, topEnd = 10.dp))
+        )*/
+
         Image(
             painter = ColorPainter(Color.White),
             contentDescription = "movie image",

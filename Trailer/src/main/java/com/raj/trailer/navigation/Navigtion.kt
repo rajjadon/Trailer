@@ -14,8 +14,8 @@ import androidx.compose.ui.unit.sp
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.currentBackStackEntryAsState
 import com.raj.trailer.R
-import com.raj.presentation.base.FAVORITE_SCREEN
-import com.raj.presentation.base.HOME_SCREEN
+import com.raj.common.constant.FAVORITE_SCREEN
+import com.raj.common.constant.HOME_SCREEN
 
 sealed class BottomNavigationScreens(
     val route: String, @StringRes val resourceId: Int, val icon: Int
