@@ -4,26 +4,30 @@ import androidx.annotation.StringRes
 import androidx.compose.material.BottomNavigation
 import androidx.compose.material.BottomNavigationItem
 import androidx.compose.material.Text
+import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.Favorite
+import androidx.compose.material.icons.filled.Home
 import androidx.compose.material3.Icon
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.currentBackStackEntryAsState
-import com.raj.trailer.R
 import com.raj.common.constant.FAVORITE_SCREEN
 import com.raj.common.constant.HOME_SCREEN
+import com.raj.trailer.R
 
 sealed class BottomNavigationScreens(
-    val route: String, @StringRes val resourceId: Int, val icon: Int
+    val route: String, @StringRes val resourceId: Int, val icon: ImageVector
 ) {
-    object HomeScreen : BottomNavigationScreens(HOME_SCREEN, R.string.home_screen, R.drawable.home)
+    object HomeScreen :
+        BottomNavigationScreens(HOME_SCREEN, R.string.home_screen, Icons.Filled.Home)
 
     object FavoriteScreen :
-        BottomNavigationScreens(FAVORITE_SCREEN, R.string.favorite_screen, R.drawable.bookmark)
+        BottomNavigationScreens(FAVORITE_SCREEN, R.string.favorite_screen, Icons.Filled.Favorite)
 }
 
 val bottomNavigationItems = listOf(
@@ -42,7 +46,7 @@ fun AppBottomNavigation(
         items.forEach { item ->
             BottomNavigationItem(icon = {
                 Icon(
-                    painterResource(id = item.icon),
+                    item.icon,
                     contentDescription = item.route
                 )
             },
