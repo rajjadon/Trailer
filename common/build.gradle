@@ -50,6 +50,7 @@ dependencies {
     api "androidx.lifecycle:lifecycle-viewmodel-compose:$lifecycle"
     api "androidx.lifecycle:lifecycle-viewmodel-ktx:$lifecycle"
     api "androidx.lifecycle:lifecycle-runtime-compose:$lifecycle"
+    api "androidx.hilt:hilt-navigation-compose:1.0.0"
 
     api "com.squareup.retrofit2:converter-gson:$project.retrofit"
 }
