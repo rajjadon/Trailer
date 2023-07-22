@@ -1,6 +1,8 @@
 plugins {
     id 'com.android.library'
     id 'org.jetbrains.kotlin.android'
+    id 'kotlin-kapt'
+    id 'dagger.hilt.android.plugin'
 }
 
 android {
@@ -78,4 +80,7 @@ dependencies {
     //Android Data Store
     implementation "androidx.datastore:datastore:$project.data_store"
     implementation "androidx.datastore:datastore-preferences:$project.data_store"
+
+    api "com.google.dagger:hilt-android:$project.hilt_version"
+    kapt "com.google.dagger:hilt-android-compiler:$project.hilt_version"
 }
