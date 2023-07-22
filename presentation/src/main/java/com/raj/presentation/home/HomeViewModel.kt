@@ -4,6 +4,7 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.raj.common.baseClasses.DataState
 import com.raj.common.extension.invokeOnIO
+import com.raj.common.extension.toSharedFlow
 import com.raj.domain.useCase.GetMovieListUseCase
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.MutableSharedFlow
@@ -14,7 +15,7 @@ class HomeViewModel @Inject constructor(private val getMovieListUseCase: GetMovi
     ViewModel() {
 
     private val _movieList = MutableSharedFlow<DataState<Unit>>()
-    val movieList = MutableSharedFlow<DataState<Unit>>()
+    val movieList = _movieList.toSharedFlow()
 
     fun getMovieList() {
         getMovieListUseCase.invokeOnIO(

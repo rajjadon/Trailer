@@ -47,9 +47,9 @@ dependencies {
     kapt "com.google.dagger:dagger-android-processor:2.45"
 
     // Lifecycle
-    implementation "androidx.lifecycle:lifecycle-viewmodel-compose:$lifecycle"
-    implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:$lifecycle"
-    implementation "androidx.lifecycle:lifecycle-runtime-compose:$lifecycle"
+    api "androidx.lifecycle:lifecycle-viewmodel-compose:$lifecycle"
+    api "androidx.lifecycle:lifecycle-viewmodel-ktx:$lifecycle"
+    api "androidx.lifecycle:lifecycle-runtime-compose:$lifecycle"
 
     api "com.squareup.retrofit2:converter-gson:$project.retrofit"
 }
