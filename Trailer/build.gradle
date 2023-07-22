@@ -23,15 +23,26 @@ android {
         vectorDrawables {
             useSupportLibrary true
         }
-
-        /*buildConfigField "String", "API_KEY", localProperties['apiKey']
-        buildConfigField "String", "ACCESS_TOKEN", localProperties['accessToken']*/
     }
 
     buildTypes {
         release {
-            minifyEnabled false
+            debuggable false
+            minifyEnabled true
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+
+            buildConfigField "String", "API_KEY", localProperties['apiKey']
+            buildConfigField "String", "ACCESS_TOKEN", localProperties['accessToken']
+            buildConfigField "String", "BASE_URL", BASE_URL
+        }
+
+        debug {
+            minifyEnabled false
+            debuggable true
+
+            buildConfigField "String", "API_KEY", localProperties['apiKey']
+            buildConfigField "String", "ACCESS_TOKEN", localProperties['accessToken']
+            buildConfigField "String", "BASE_URL", BASE_URL
         }
     }
     compileOptions {
