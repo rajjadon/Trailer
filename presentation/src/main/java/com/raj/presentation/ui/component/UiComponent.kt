@@ -138,7 +138,7 @@ fun LoadingUi(loadingMessage: String = "Loading data please wait") {
             .fillMaxHeight()
     ) {
         CircularProgressIndicator(
-            color = Color.White
+            color = Color.Black
         )
 
         Text(
@@ -150,7 +150,7 @@ fun LoadingUi(loadingMessage: String = "Loading data please wait") {
                     start = 10.dp, bottom = 16.dp
                 ),
             style = TextStyle(
-                color = Color.White,
+                color = Color.Black,
                 fontSize = 16.sp,
                 fontWeight = FontWeight.Normal
             )
