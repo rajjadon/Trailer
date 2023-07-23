@@ -1,0 +1,33 @@
+package com.raj.data.extension
+
+import com.raj.datasource.model.TrendingApiData
+import com.raj.domain.model.TrendingDomain
+import java.text.SimpleDateFormat
+import java.util.Locale
+
+fun TrendingApiData.toTrendingDomain(
+    simpleDateFormat: SimpleDateFormat = SimpleDateFormat(
+        "dd/MM/yyy",
+        Locale.getDefault()
+    )
+) = TrendingDomain(
+    adult = adult,
+    backdropPath = backdrop_path,
+    firstAirDate = first_air_date,
+    genreIds = genre_ids,
+    id = id,
+    mediaType = media_type,
+    name = name,
+    originCountry = origin_country,
+    originalLanguage = original_language,
+    originalName = original_name,
+    originalTitle = original_title,
+    overview = overview,
+    popularity = popularity,
+    posterPath = poster_path,
+    releaseDate = simpleDateFormat.format(release_date),
+    title = title,
+    video = video,
+    voteAverage = vote_average,
+    voteCount = vote_count
+)
