@@ -26,5 +26,5 @@ object provideAppUrl {
 
     @Provides
     @ApiQualifier(ApiConstantEnum.IMAGE_LOADING_URL)
-    fun provideimgaeLoadingUrl() = BuildConfig.IMAGE_LOADING_URL
+    fun provideImgaeLoadingUrl() = BuildConfig.IMAGE_LOADING_URL
 }
