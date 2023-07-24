@@ -27,10 +27,10 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.raj.common.error.HttpRequestError
 import com.raj.common.error.NetworkError
+import com.raj.domain.model.TrendingDomain
 
 @Composable
-@Preview
-fun HomeScreenItem() {
+fun HomeScreenItem(trendingDomain: TrendingDomain) {
     Column(
         horizontalAlignment = Alignment.End,
         verticalArrangement = Arrangement.Center,
@@ -46,14 +46,14 @@ fun HomeScreenItem() {
         )*/
 
         Image(
-            painter = ColorPainter(Color.White),
+            painter = ColorPainter(Color.Black),
             contentDescription = "movie image",
             modifier = Modifier
                 .height(160.dp)
                 .clip(shape = RoundedCornerShape(topStart = 10.dp, topEnd = 10.dp))
         )
         Text(
-            text = "Title",
+            text = trendingDomain.title.toString(),
             modifier = Modifier
                 .fillMaxWidth()
                 .padding(
@@ -66,7 +66,7 @@ fun HomeScreenItem() {
             )
         )
         Text(
-            text = "Description",
+            text = "${trendingDomain.voteAverage?.toInt().toString()}/10",
             modifier = Modifier
                 .fillMaxWidth()
                 .padding(
