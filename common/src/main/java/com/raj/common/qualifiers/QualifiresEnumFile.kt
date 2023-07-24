@@ -7,5 +7,6 @@ enum class AppScreenEnum(val route: String) {
 enum class ApiConstantEnum(val value: String) {
     ACCESS_TOKEN("access_token"),
     API_KEY("api_key"),
+    IMAGE_LOADING_URL("image_loading_url"),
     BASE_URL("base_url")
 }

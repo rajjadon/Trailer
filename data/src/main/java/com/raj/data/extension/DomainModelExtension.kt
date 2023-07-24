@@ -3,7 +3,7 @@ package com.raj.data.extension
 import com.raj.datasource.model.TrendingApiData
 import com.raj.domain.model.TrendingDomain
 
-fun TrendingApiData.toTrendingDomain() = TrendingDomain(
+fun TrendingApiData.toTrendingDomain(imageLoadingUrl: String) = TrendingDomain(
     adult = adult,
     backdropPath = backdrop_path,
     firstAirDate = first_air_date,
@@ -17,7 +17,7 @@ fun TrendingApiData.toTrendingDomain() = TrendingDomain(
     originalTitle = original_title,
     overview = overview,
     popularity = popularity,
-    posterPath = "https://image.tmdb.org/t/p/w500$poster_path",
+    posterPath = "$imageLoadingUrl$poster_path",
     releaseDate = release_date,
     title = title,
     video = video,

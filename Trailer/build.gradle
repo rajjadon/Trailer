@@ -34,6 +34,7 @@ android {
             buildConfigField "String", "API_KEY", localProperties['apiKey']
             buildConfigField "String", "ACCESS_TOKEN", localProperties['accessToken']
             buildConfigField "String", "BASE_URL", BASE_URL
+            buildConfigField "String", "IMAGE_LOADING_URL", IMAGE_LOADING_URL
         }
 
         debug {
@@ -43,6 +44,7 @@ android {
             buildConfigField "String", "API_KEY", localProperties['apiKey']
             buildConfigField "String", "ACCESS_TOKEN", localProperties['accessToken']
             buildConfigField "String", "BASE_URL", BASE_URL
+            buildConfigField "String", "IMAGE_LOADING_URL", IMAGE_LOADING_URL
         }
     }
     compileOptions {

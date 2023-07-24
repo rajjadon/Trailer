@@ -23,4 +23,8 @@ object provideAppUrl {
     @Provides
     @ApiQualifier(ApiConstantEnum.API_KEY)
     fun provideApiKey() = BuildConfig.API_KEY
+
+    @Provides
+    @ApiQualifier(ApiConstantEnum.IMAGE_LOADING_URL)
+    fun provideimgaeLoadingUrl() = BuildConfig.IMAGE_LOADING_URL
 }
