@@ -2,15 +2,8 @@ package com.raj.data.extension
 
 import com.raj.datasource.model.TrendingApiData
 import com.raj.domain.model.TrendingDomain
-import java.text.SimpleDateFormat
-import java.util.Locale
 
-fun TrendingApiData.toTrendingDomain(
-    simpleDateFormat: SimpleDateFormat = SimpleDateFormat(
-        "dd/MM/yyy",
-        Locale.getDefault()
-    )
-) = TrendingDomain(
+fun TrendingApiData.toTrendingDomain() = TrendingDomain(
     adult = adult,
     backdropPath = backdrop_path,
     firstAirDate = first_air_date,
