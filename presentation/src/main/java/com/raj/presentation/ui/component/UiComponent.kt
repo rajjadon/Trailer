@@ -1,6 +1,5 @@
 package com.raj.presentation.ui.component
 
-import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
@@ -16,7 +15,6 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.graphics.painter.ColorPainter
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
@@ -25,10 +23,13 @@ import androidx.compose.ui.tooling.preview.PreviewParameter
 import androidx.compose.ui.tooling.preview.PreviewParameterProvider
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import com.bumptech.glide.integration.compose.ExperimentalGlideComposeApi
+import com.bumptech.glide.integration.compose.GlideImage
 import com.raj.common.error.HttpRequestError
 import com.raj.common.error.NetworkError
 import com.raj.domain.model.TrendingDomain
 
+@OptIn(ExperimentalGlideComposeApi::class)
 @Composable
 fun HomeScreenItem(trendingDomain: TrendingDomain) {
     Column(
@@ -39,19 +40,15 @@ fun HomeScreenItem(trendingDomain: TrendingDomain) {
             .background(color = Color.Gray, shape = RoundedCornerShape(10.dp))
     ) {
 
-        /*GlideImage(
-            model = "", contentDescription = "movie banner", modifier = Modifier
-                .height(160.dp)
-                .clip(shape = RoundedCornerShape(topStart = 10.dp, topEnd = 10.dp))
-        )*/
-
-        Image(
-            painter = ColorPainter(Color.Black),
-            contentDescription = "movie image",
+        GlideImage(
+            model = trendingDomain.posterPath,
+            contentDescription = "movie banner",
             modifier = Modifier
                 .height(160.dp)
                 .clip(shape = RoundedCornerShape(topStart = 10.dp, topEnd = 10.dp))
         )
+
+
         Text(
             text = trendingDomain.title.toString(),
             modifier = Modifier
