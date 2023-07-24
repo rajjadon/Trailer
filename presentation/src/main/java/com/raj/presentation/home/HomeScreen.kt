@@ -47,7 +47,7 @@ fun HomeScreen(homeViewModel: HomeViewModel) {
 
                 LazyVerticalGrid(
                     columns = GridCells.Fixed(3),
-                    modifier = Modifier.padding(top = 16.dp)
+                    modifier = Modifier.padding(top = 10.dp)
                 ) {
                     items(dataState.baseResponseData.size) {
                         HomeScreenItem(dataState.baseResponseData[it])

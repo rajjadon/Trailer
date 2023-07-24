@@ -5,7 +5,6 @@ import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxHeight
 import androidx.compose.foundation.layout.fillMaxWidth
-import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.CircularProgressIndicator
@@ -44,7 +43,7 @@ fun HomeScreenItem(trendingDomain: TrendingDomain) {
             model = trendingDomain.posterPath,
             contentDescription = "movie banner",
             modifier = Modifier
-                .height(160.dp)
+                .fillMaxWidth()
                 .clip(shape = RoundedCornerShape(topStart = 10.dp, topEnd = 10.dp))
         )
 
@@ -54,7 +53,7 @@ fun HomeScreenItem(trendingDomain: TrendingDomain) {
             modifier = Modifier
                 .fillMaxWidth()
                 .padding(
-                    top = 16.dp, start = 10.dp
+                    top = 10.dp, start = 10.dp
                 ),
             style = TextStyle(
                 color = Color.White,
