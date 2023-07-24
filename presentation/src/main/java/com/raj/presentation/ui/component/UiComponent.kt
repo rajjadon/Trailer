@@ -92,11 +92,12 @@ fun ErrorUi(@PreviewParameter(SampleNetworkErrorProvider::class) networkError: N
         horizontalAlignment = Alignment.End,
         verticalArrangement = Arrangement.Center,
         modifier = Modifier
+            .background(color = Color.Gray)
             .fillMaxWidth()
             .fillMaxHeight()
     ) {
         Text(
-            text = networkError.getErrorCode().toString(),
+            text = networkError.getNetworkErrorMessage(),
             textAlign = TextAlign.Center,
             modifier = Modifier
                 .fillMaxWidth()
@@ -104,13 +105,13 @@ fun ErrorUi(@PreviewParameter(SampleNetworkErrorProvider::class) networkError: N
                     top = 16.dp, start = 10.dp
                 ),
             style = TextStyle(
-                color = Color.White,
+                color = Color.Black,
                 fontSize = 35.sp,
                 fontWeight = FontWeight.Bold
             )
         )
         Text(
-            text = networkError.getNetworkErrorMessage(),
+            text = networkError.getErrorCode().toString(),
             textAlign = TextAlign.Center,
             modifier = Modifier
                 .fillMaxWidth()
@@ -118,7 +119,7 @@ fun ErrorUi(@PreviewParameter(SampleNetworkErrorProvider::class) networkError: N
                     start = 10.dp, bottom = 16.dp
                 ),
             style = TextStyle(
-                color = Color.White,
+                color = Color.Black,
                 fontSize = 16.sp,
                 fontWeight = FontWeight.Normal
             )

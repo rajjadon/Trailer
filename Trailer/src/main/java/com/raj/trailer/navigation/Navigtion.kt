@@ -16,18 +16,25 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.currentBackStackEntryAsState
-import com.raj.common.constant.FAVORITE_SCREEN
-import com.raj.common.constant.HOME_SCREEN
+import com.raj.common.qualifiers.AppScreenEnum
 import com.raj.trailer.R
 
 sealed class BottomNavigationScreens(
     val route: String, @StringRes val resourceId: Int, val icon: ImageVector
 ) {
     object HomeScreen :
-        BottomNavigationScreens(HOME_SCREEN, R.string.home_screen, Icons.Filled.Home)
+        BottomNavigationScreens(
+            AppScreenEnum.HOME_SCREEN.route,
+            R.string.home_screen,
+            Icons.Filled.Home
+        )
 
     object FavoriteScreen :
-        BottomNavigationScreens(FAVORITE_SCREEN, R.string.favorite_screen, Icons.Filled.Favorite)
+        BottomNavigationScreens(
+            AppScreenEnum.FAVORITE_SCREEN.route,
+            R.string.favorite_screen,
+            Icons.Filled.Favorite
+        )
 }
 
 val bottomNavigationItems = listOf(

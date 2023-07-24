@@ -6,6 +6,6 @@ import retrofit2.http.GET
 
 interface NetworkService {
 
-    @GET(BuildConfig.TRENDING)
+    @GET("${BuildConfig.TRENDING}/all/day")
     suspend fun getTrending(): TrendingApiResponse
 }

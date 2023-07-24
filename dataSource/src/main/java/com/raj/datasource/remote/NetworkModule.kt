@@ -1,6 +1,8 @@
 package com.raj.datasource.remote
 
 import android.content.Context
+import com.raj.common.qualifiers.ApiConstantEnum
+import com.raj.common.qualifiers.ApiQualifier
 import com.raj.datasource.remote.retrofitIntepceptor.AuthInterceptor
 import dagger.Module
 import dagger.Provides
@@ -24,9 +26,10 @@ object NetworkModule {
     @Provides
     fun provideRetrofit(
         @ApplicationContext application: Context,
+        @ApiQualifier(ApiConstantEnum.BASE_URL) baseUrl: String,
         authInterceptor: AuthInterceptor
     ): Retrofit.Builder {
-        return Retrofit.Builder().baseUrl("https://private-75664-githubtrendingapi.apiary-mock.com/")
+        return Retrofit.Builder().baseUrl(baseUrl)
             .client(OkHttpClient().newBuilder().apply {
 
                 callTimeout(40, TimeUnit.SECONDS)
