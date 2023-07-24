@@ -36,7 +36,7 @@ fun HomeScreenItem(trendingDomain: TrendingDomain) {
         verticalArrangement = Arrangement.Center,
         modifier = Modifier
             .padding(5.dp)
-            .background(color = Color.Gray, shape = RoundedCornerShape(10.dp))
+            .background(color = Color.Black, shape = RoundedCornerShape(10.dp))
     ) {
 
         GlideImage(
@@ -50,6 +50,7 @@ fun HomeScreenItem(trendingDomain: TrendingDomain) {
 
         Text(
             text = trendingDomain.title.toString(),
+            maxLines = 1,
             modifier = Modifier
                 .fillMaxWidth()
                 .padding(

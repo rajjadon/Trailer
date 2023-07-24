@@ -34,7 +34,7 @@ fun HomeScreen(homeViewModel: HomeViewModel) {
         is DataState.Error -> ErrorUi(networkError = dataState.exception)
         DataState.Loading -> LoadingUi()
         is DataState.Success -> {
-            Column(Modifier.background(color = Color.Black)) {
+            Column(Modifier.background(color = Color.Gray)) {
                 Spacer(modifier = Modifier.statusBarsPadding())
                 var text by remember { mutableStateOf("") }
                 TextField(
