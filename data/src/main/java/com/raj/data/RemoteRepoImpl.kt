@@ -15,7 +15,6 @@ class RemoteRepoImpl @Inject constructor(
     private val safeApiRequest: SafeApiRequest
 ) : RemoteRepo {
     override suspend fun getMovieList(): Flow<DataState<List<TrendingDomain>>> = flow {
-        emit(DataState.Loading)
         emit(safeApiRequest.apiRequest {
             networkService.getTrending().results.map {
                 it.toTrendingDomain()
