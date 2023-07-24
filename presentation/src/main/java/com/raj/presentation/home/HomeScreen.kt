@@ -15,7 +15,6 @@ import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import com.raj.common.baseClasses.DataState
@@ -26,7 +25,6 @@ import com.raj.presentation.ui.component.LoadingUi
 val numbers = (0..20).toList()
 
 @Composable
-@Preview
 fun HomeScreen(homeViewModel: HomeViewModel) {
 
     val dataState =

@@ -25,7 +25,7 @@ fun TrendingApiData.toTrendingDomain(
     overview = overview,
     popularity = popularity,
     posterPath = poster_path,
-    releaseDate = simpleDateFormat.format(release_date),
+    releaseDate = release_date,
     title = title,
     video = video,
     voteAverage = vote_average,
