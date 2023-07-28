@@ -39,14 +39,14 @@ fun HomeScreenItem(trendingDomain: TrendingDomain) {
             .background(color = Color.Black, shape = RoundedCornerShape(10.dp))
     ) {
 
-        Box {
+        Box(contentAlignment = Alignment.TopEnd) {
             GlideImage(
                 model = trendingDomain.posterPath,
                 contentDescription = "movie banner",
                 modifier = Modifier
                     .clip(shape = RoundedCornerShape(topStart = 10.dp, topEnd = 10.dp))
             )
-            FavoriteButton()
+            FavoriteButton(color = Color.Red)
         }
 
         Text(
