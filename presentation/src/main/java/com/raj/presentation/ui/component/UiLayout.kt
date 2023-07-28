@@ -32,7 +32,7 @@ import com.raj.domain.model.TrendingDomain
 
 @OptIn(ExperimentalGlideComposeApi::class)
 @Composable
-fun HomeScreenItem(trendingDomain: TrendingDomain) {
+fun HomeScreenItem(trendingDomain: TrendingDomain, isFavoriteListener: (Boolean) -> Unit = {}) {
     Column(
         modifier = Modifier
             .padding(5.dp)
@@ -46,7 +46,7 @@ fun HomeScreenItem(trendingDomain: TrendingDomain) {
                 modifier = Modifier
                     .clip(shape = RoundedCornerShape(topStart = 10.dp, topEnd = 10.dp))
             )
-            FavoriteButton(color = Color.Red)
+            FavoriteButton(isFavoriteListener = isFavoriteListener)
         }
 
         Text(

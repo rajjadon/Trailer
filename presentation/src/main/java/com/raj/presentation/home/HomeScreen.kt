@@ -49,8 +49,11 @@ fun HomeScreen(homeViewModel: HomeViewModel) {
                     columns = GridCells.Fixed(3),
                     modifier = Modifier.padding(top = 10.dp)
                 ) {
-                    items(dataState.baseResponseData.size) {
-                        HomeScreenItem(dataState.baseResponseData[it])
+                    items(dataState.baseResponseData.size) { position ->
+                        val movies = dataState.baseResponseData[position]
+                        HomeScreenItem(movies, isFavoriteListener = { isFavoriteSelected ->
+                            movies.isFavorite = isFavoriteSelected
+                        })
                     }
                 }
             }

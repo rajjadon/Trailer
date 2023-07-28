@@ -19,5 +19,6 @@ data class TrendingDomain(
     val title: String? = null,
     val video: Boolean? = null,
     val voteAverage: Double? = null,
-    val voteCount: Int? = null
+    val voteCount: Int? = null,
+    var isFavorite: Boolean = false
 )

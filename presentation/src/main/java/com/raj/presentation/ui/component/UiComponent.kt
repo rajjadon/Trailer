@@ -19,7 +19,8 @@ import androidx.compose.ui.tooling.preview.Preview
 @Preview
 fun FavoriteButton(
     modifier: Modifier = Modifier,
-    color: Color = Color(0xffE91E63)
+    color: Color = Color.Red,
+    isFavoriteListener: (Boolean) -> Unit = {}
 ) {
 
     var isFavorite by remember { mutableStateOf(false) }
@@ -28,6 +29,7 @@ fun FavoriteButton(
         checked = isFavorite,
         onCheckedChange = {
             isFavorite = !isFavorite
+            isFavoriteListener.invoke(isFavorite)
         }
     ) {
         Icon(
