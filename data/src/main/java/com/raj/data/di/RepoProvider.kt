@@ -1,6 +1,8 @@
 package com.raj.data.di
 
+import com.raj.data.LocalRepoImpl
 import com.raj.data.RemoteRepoImpl
+import com.raj.domain.repo.LocalRepo
 import com.raj.domain.repo.RemoteRepo
 import dagger.Binds
 import dagger.Module
@@ -12,5 +14,6 @@ import dagger.hilt.components.SingletonComponent
 abstract class RepoProvider {
 
     @Binds
-    abstract fun repoProvider( repoImpl: RemoteRepoImpl) : RemoteRepo
+    abstract fun repoProvider(repoImpl: RemoteRepoImpl): RemoteRepo
+    abstract fun localRepoProvider(localRepoImpl: LocalRepoImpl): LocalRepo
 }

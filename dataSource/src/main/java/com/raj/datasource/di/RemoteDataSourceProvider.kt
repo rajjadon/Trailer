@@ -1,4 +1,4 @@
-package com.raj.datasource.remote.di
+package com.raj.datasource.di
 
 import com.raj.datasource.remote.networkService.NetworkService
 import dagger.Module

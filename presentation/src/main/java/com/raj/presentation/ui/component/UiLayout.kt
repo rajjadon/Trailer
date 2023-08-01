@@ -89,7 +89,8 @@ fun ErrorUi(@PreviewParameter(SampleNetworkErrorProvider::class) networkError: N
     Column(
         modifier = Modifier
             .background(color = Color.Gray)
-            .fillMaxSize()
+            .fillMaxSize(),
+        verticalArrangement = Arrangement.Center
     ) {
         Text(
             text = networkError.getNetworkErrorMessage(),
