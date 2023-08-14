@@ -15,5 +15,7 @@ abstract class RepoProvider {
 
     @Binds
     abstract fun repoProvider(repoImpl: RemoteRepoImpl): RemoteRepo
+
+    @Binds
     abstract fun localRepoProvider(localRepoImpl: LocalRepoImpl): LocalRepo
 }
