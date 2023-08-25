@@ -57,14 +57,15 @@ private fun MainActivityScreen() {
 private fun MainScreenNavigationConfigurations(
     navController: NavHostController
 ) {
+    val homeViewModel: HomeViewModel = hiltViewModel()
+
     NavHost(navController, startDestination = BottomNavigationScreens.HomeScreen.route) {
         composable(BottomNavigationScreens.HomeScreen.route) {
-            val homeViewModel: HomeViewModel = hiltViewModel()
             homeViewModel.getMovieList()
             HomeScreen(homeViewModel)
         }
         composable(BottomNavigationScreens.FavoriteScreen.route) {
-            FavoriteScreen()
+            FavoriteScreen(homeViewModel)
         }
     }
 }
