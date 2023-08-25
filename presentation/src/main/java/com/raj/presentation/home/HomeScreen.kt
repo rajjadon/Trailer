@@ -53,6 +53,9 @@ fun HomeScreen(homeViewModel: HomeViewModel) {
                         val movies = dataState.baseResponseData[position]
                         HomeScreenItem(movies, isFavoriteListener = { isFavoriteSelected ->
                             movies.isFavorite = isFavoriteSelected
+
+                            if (isFavoriteSelected)
+                                homeViewModel.addMovieInFavorite(movies)
                         })
                     }
                 }
