@@ -10,7 +10,7 @@ import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flow
 import javax.inject.Inject
 
-class AddMovieInFavorite @Inject constructor(private val localRepo: LocalRepo) :
+class AddMovieInFavoriteUseCase @Inject constructor(private val localRepo: LocalRepo) :
     BaseUseCase<TrendingDomain, Unit>() {
     override suspend fun run(
         params: TrendingDomain,

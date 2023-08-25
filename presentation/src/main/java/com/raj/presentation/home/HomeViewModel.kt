@@ -6,7 +6,7 @@ import com.raj.common.baseClasses.DataState
 import com.raj.common.extension.invokeOnIO
 import com.raj.common.extension.toSharedFlow
 import com.raj.domain.model.TrendingDomain
-import com.raj.domain.useCase.AddMovieInFavorite
+import com.raj.domain.useCase.AddMovieInFavoriteUseCase
 import com.raj.domain.useCase.GetMovieListUseCase
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.MutableSharedFlow
@@ -15,7 +15,7 @@ import javax.inject.Inject
 @HiltViewModel
 class HomeViewModel @Inject constructor(
     private val getMovieListUseCase: GetMovieListUseCase,
-    private val addMovieInFavorite: AddMovieInFavorite
+    private val addMovieInFavoriteUseCase: AddMovieInFavoriteUseCase
 ) : ViewModel() {
 
     private val _movieList = MutableSharedFlow<DataState<List<TrendingDomain>>>()
@@ -31,7 +31,7 @@ class HomeViewModel @Inject constructor(
     }
 
     fun addMovieInFavorite(trendingDomain: TrendingDomain) {
-        addMovieInFavorite.invokeOnIO(
+        addMovieInFavoriteUseCase.invokeOnIO(
             params = trendingDomain,
             scope = viewModelScope,
             onResult = {}
