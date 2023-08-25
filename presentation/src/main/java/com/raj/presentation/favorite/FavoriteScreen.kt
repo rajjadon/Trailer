@@ -20,16 +20,15 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import com.raj.common.baseClasses.DataState
-import com.raj.presentation.home.HomeViewModel
 import com.raj.presentation.ui.component.ErrorUi
 import com.raj.presentation.ui.component.HomeScreenItem
 import com.raj.presentation.ui.component.LoadingUi
 
 @Composable
-fun FavoriteScreen(homeViewModel: HomeViewModel) {
+fun FavoriteScreen(favoriteViewModel: FavoriteViewModel) {
 
     val dataState =
-        homeViewModel.movieList.collectAsStateWithLifecycle(initialValue = DataState.Loading).value
+        favoriteViewModel.movieList.collectAsStateWithLifecycle(initialValue = DataState.Loading).value
 
     when (dataState) {
         is DataState.Error -> ErrorUi(networkError = dataState.exception)
@@ -54,9 +53,6 @@ fun FavoriteScreen(homeViewModel: HomeViewModel) {
                         val movies = dataState.baseResponseData[position]
                         HomeScreenItem(movies, isFavoriteListener = { isFavoriteSelected ->
                             movies.isFavorite = isFavoriteSelected
-
-                            if (isFavoriteSelected)
-                                homeViewModel.addMovieInFavorite(movies)
                         })
                     }
                 }

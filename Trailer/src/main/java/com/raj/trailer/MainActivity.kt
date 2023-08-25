@@ -15,6 +15,7 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import com.raj.presentation.favorite.FavoriteScreen
+import com.raj.presentation.favorite.FavoriteViewModel
 import com.raj.presentation.home.HomeScreen
 import com.raj.presentation.home.HomeViewModel
 import com.raj.presentation.ui.theme.TrailerTheme
@@ -57,15 +58,16 @@ private fun MainActivityScreen() {
 private fun MainScreenNavigationConfigurations(
     navController: NavHostController
 ) {
-    val homeViewModel: HomeViewModel = hiltViewModel()
-
     NavHost(navController, startDestination = BottomNavigationScreens.HomeScreen.route) {
         composable(BottomNavigationScreens.HomeScreen.route) {
+            val homeViewModel: HomeViewModel = hiltViewModel()
             homeViewModel.getMovieList()
             HomeScreen(homeViewModel)
         }
         composable(BottomNavigationScreens.FavoriteScreen.route) {
-            FavoriteScreen(homeViewModel)
+            val favoriteViewModel: FavoriteViewModel = hiltViewModel()
+            favoriteViewModel.getMovieList()
+            FavoriteScreen(favoriteViewModel)
         }
     }
 }
