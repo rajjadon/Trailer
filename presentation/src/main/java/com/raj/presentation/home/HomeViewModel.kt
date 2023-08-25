@@ -12,19 +12,16 @@ import kotlinx.coroutines.flow.MutableSharedFlow
 import javax.inject.Inject
 
 @HiltViewModel
-class HomeViewModel @Inject constructor(private val getMovieListUseCase: GetMovieListUseCase) :
-    ViewModel() {
+class HomeViewModel @Inject constructor(
+    private val getMovieListUseCase: GetMovieListUseCase
+) : ViewModel() {
 
     private val _movieList = MutableSharedFlow<DataState<List<TrendingDomain>>>()
     val movieList = _movieList.toSharedFlow()
 
     fun getMovieList() {
-        getMovieListUseCase.invokeOnIO(
-            params = Unit,
-            scope = viewModelScope,
-            onResult = {
-                _movieList.emit(it)
-            }
-        )
+        getMovieListUseCase.invokeOnIO(params = Unit, scope = viewModelScope, onResult = {
+            _movieList.emit(it)
+        })
     }
 }
